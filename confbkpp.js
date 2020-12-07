@@ -3,7 +3,6 @@ require("babel-register")({
     presets: [ 'es2015' ]
 });
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
-var htmlReporter = require('protractor-beautiful-reporter');
 
 exports.config = {
     /**
@@ -26,12 +25,6 @@ exports.config = {
             savePath: 'target/reporter'
           })
         );
-       
-        jasmine.getEnv().addReporter(
-            new htmlReporter({
-              baseDirectory: 'target/newreport/screenshots'
-            }).getJasmine2Reporter()
-          );
         const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
         jasmine.getEnv().addReporter(new SpecReporter({
             spec: {
